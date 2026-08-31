@@ -167,19 +167,7 @@
 ''' find the total time taken by our program '''
 
 
-# import random
-# import time
 
-# start = time.time()
-
-# for i in range(10):
-#     num = random.randint(100, 200)
-#     print(num)
-#     #time.sleep(1)
-
-# end = time.time()
-
-# print("Total time taken =", end - start, "seconds")
 
 # import time
 # import random
@@ -196,6 +184,76 @@
 # print("Performance counter time =", end - start, "seconds")
 
 
+# import time
+# import random
+
+# start = time.process_time()
+
+# for i in range(10):
+#     num = random.randint(100, 200)
+#     print(num)
+#     time.sleep(3)
+
+# end = time.process_time()
+
+# print("prcoess time =", end - start, "seconds")
+
+'''write a pyhon code to enter to person dateof birth and return older the person'''
+
+# from datetime import datetime
+
+# dob1 = input("Enter Person 1 DOB (DD-MM-YYYY): ")
+# dob2 = input("Enter Person 2 DOB (DD-MM-YYYY): ")
+
+# date1 = datetime.strptime(dob1, "%d-%m-%Y")
+# date2 = datetime.strptime(dob2, "%d-%m-%Y")
+
+# if date1 < date2:
+#     print("Person 1 is older")
+# elif date2 < date1:
+#     print("Person 2 is older")
+# else:
+#     print("Both are of the same age")
+
+# '''strptime() → String → Date'''
+# from datetime import datetime
+
+# date = "31-08-2026"
+
+# d = datetime.strptime(date, "%d-%m-%Y")
+
+# print(d)
+
+'''strftime() → Date → String'''
+
+# from datetime import datetime
+
+# d = datetime.now()
+
+# date = d.strftime("%d-%m-%Y")
+
+# print(date,type(date))
+
+
+
+
+# ''' perfromance counter'''
+
+import time
+import random
+
+start = time.perf_counter()
+
+for i in range(10):
+    num = random.randint(100, 200)
+    print(num)
+    time.sleep(3)
+
+end = time.perf_counter()
+
+print("Performance counter time =", end - start, "seconds")
+
+'''procress time'''
 import time
 import random
 
