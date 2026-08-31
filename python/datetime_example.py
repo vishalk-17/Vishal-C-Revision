@@ -239,31 +239,85 @@
 
 # ''' perfromance counter'''
 
-import time
-import random
+# import time
+# import random
 
-start = time.perf_counter()
+# start = time.perf_counter()
 
-for i in range(10):
-    num = random.randint(100, 200)
-    print(num)
-    time.sleep(3)
+# for i in range(10):
+#     num = random.randint(100, 200)
+#     print(num)
+#     time.sleep(3)
 
-end = time.perf_counter()
+# end = time.perf_counter()
 
-print("Performance counter time =", end - start, "seconds")
+# print("Performance counter time =", end - start, "seconds")
 
-'''procress time'''
-import time
-import random
+# '''procress time'''
+# import time
+# import random
 
-start = time.process_time()
+# start = time.process_time()
 
-for i in range(10):
-    num = random.randint(100, 200)
-    print(num)
-    time.sleep(3)
+# for i in range(10):
+#     num = random.randint(100, 200)
+#     print(num)
+#     time.sleep(3)
 
-end = time.process_time()
+# end = time.process_time()
 
-print("prcoess time =", end - start, "seconds")
+# print("prcoess time =", end - start, "seconds")
+
+'''write a python code the text the birth date as input and compute person exisits age in year and monnth days'''
+
+
+from datetime import datetime
+
+
+dob = input("Enter your date of birth (DD-MM-YYYY): ")
+
+
+birth_date = datetime.strptime(dob, "%d-%m-%Y").date()
+
+
+today = datetime.today().date()
+
+# Calculate initial age
+years = today.year - birth_date.year
+months = today.month - birth_date.month
+days = today.day - birth_date.day
+
+
+if days < 0:
+    months -= 1
+    # Approximate previous month's days
+    if today.month == 1:
+        prev_month = 12
+        prev_year = today.year - 1
+    else:
+        prev_month = today.month - 1
+        prev_year = today.year
+
+    days += (datetime(prev_year, prev_month + 1, 1).date()
+             - datetime(prev_year, prev_month, 1).date()).days
+
+# Adjust months
+if months < 0:
+    years -= 1
+    months += 12
+
+print("Age =", years, "years,", months, "months,", days, "days")
+
+
+'''write a python code to generate 45 minutes recuring meting block for 4 meeting providing first meeting 9 am'''
+from datetime import datetime, timedelta
+
+start_time = datetime.strptime("09:00 AM", "%I:%M %p")
+
+for i in range(4):
+    end_time = start_time + timedelta(minutes=45)
+
+    print(f"Meeting {i + 1}: {start_time.strftime('%I:%M %p')} - "
+          f"{end_time.strftime('%I:%M %p')}")
+
+    start_time = end_time
