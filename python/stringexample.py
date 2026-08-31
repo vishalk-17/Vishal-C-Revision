@@ -49,4 +49,4 @@ print(s.replace("Python", "Java"))
 
 
 # Check for text
-print("Python" in s)   # True
+print("Python" in s)
