@@ -308,16 +308,3 @@ if months < 0:
 
 print("Age =", years, "years,", months, "months,", days, "days")
 
-
-'''write a python code to generate 45 minutes recuring meting block for 4 meeting providing first meeting 9 am'''
-from datetime import datetime, timedelta
-
-start_time = datetime.strptime("09:00 AM", "%I:%M %p")
-
-for i in range(4):
-    end_time = start_time + timedelta(minutes=45)
-
-    print(f"Meeting {i + 1}: {start_time.strftime('%I:%M %p')} - "
-          f"{end_time.strftime('%I:%M %p')}")
-
-    start_time = end_time
