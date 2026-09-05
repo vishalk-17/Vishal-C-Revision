@@ -47,4 +47,5 @@ async function fetchData() {
 }
 
 
-module.exports = {getLanguageById,submitBatch};
+module.exports = {getLanguageById,submitBatch}; 
+
