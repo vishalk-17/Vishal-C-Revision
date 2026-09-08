@@ -11,7 +11,7 @@ const problemRouter = require("./routes/problemCreator");
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/auth',authRouter);
+app.use('/user',authRouter);
 app.use('/problem',problemRouter);
 
 
